@@ -1,0 +1,12 @@
+int Primalidade(unsigned int x){
+	insigned int d;
+	if(x<2)
+		return 0;	
+	d=x/2; 
+	while(d>2){
+		if((x%d)==0)
+			return 0;
+		d--;			
+	}
+	return 1;
+}

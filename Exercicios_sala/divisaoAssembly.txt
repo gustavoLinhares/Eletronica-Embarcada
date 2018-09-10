@@ -1,0 +1,14 @@
+DIVISAO_ASSEMBLY: 	push R4; R4:c
+			clr r4
+			tst r14
+			jz divisao_uns_else
+DIvisao_uns_while: 	cmp r14,r15
+			jl divisao_uns_else
+			sub r14,r15
+			inc r4
+			jmp divisao_uns_while
+divisao_uns_else:	mov r4,r15
+			pop r4
+			ret
+
+	

@@ -1,0 +1,26 @@
+Primalidade: 	push R4; numero d
+		cmp #2, R15
+		jge teste_par
+Primo_zero:	pop R4
+		clr R15
+		ret
+teste_par:	mov R15,R14
+		and #1, R14
+		cmp #0,R14
+		jeq Primo_zero
+Teste_impar:	mov R15,R4
+		rra R4 ; d=x/2
+Prim_while:	cmp #2,R4
+		jeq Prime_end
+		push R15
+		mov R4,R14
+		call Resto_uns
+		mov R15,R14
+		pop R15
+		cmp #0,R14
+		jeq Prim_zero
+		dec R4
+		jmp Prime_while 
+PRime_end:	pop R4
+		mov #1, R15
+		ret

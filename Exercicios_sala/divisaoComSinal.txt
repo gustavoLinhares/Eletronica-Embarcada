@@ -1,0 +1,20 @@
+int divisao (int a, int b){
+	int sinal =0;
+	if(a<0){
+		a=-a;
+		sinal++;
+		
+	}
+	if(b<0){
+		b=-b;
+		sinal++;
+		
+	}
+	c=Divisao_uns(a,b);
+	if (sinal=1)
+		c=-c;
+	return c;
+
+
+
+}

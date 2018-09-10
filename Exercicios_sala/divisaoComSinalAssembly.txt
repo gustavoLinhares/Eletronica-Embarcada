@@ -1,0 +1,23 @@
+divisao:	push R4;sinal
+		push R5; c
+		clr R4; sinal=0
+Divisao_a:	cmp #0,R15
+		jge divisao_b
+		inv R15
+		inc R15
+		inc R4
+Divisao_b:	cmp #0,R14
+		jge Divisao_c
+		inv R4
+		inc R4
+		inc R4
+DIvisao_c:	cll Divisao_uns
+		mov R15,R5
+		cmp #1,R4
+		jne divisao_end
+		inv R5
+		inc R5
+Divisao_end: 	mov R5,R15
+		pop R5
+		pop R4
+		ret
