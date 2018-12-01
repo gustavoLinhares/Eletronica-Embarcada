@@ -1,4 +1,4 @@
-*1. O que são sistemas embarcados?*
+## *1. O que são sistemas embarcados?*
 
 Um sistema embarcado (ou sistema embutido) é um sistema microprocessado no qual o computador é completamente encapsulado ou dedicado ao dispositivo ou sistema que ele controla. 
 
