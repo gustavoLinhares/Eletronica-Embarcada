@@ -24,7 +24,7 @@ void main (void)
     while(1)
     {
         P1OUT ^= LEDS;
-        for (i = 0; i < 0x6000; i++);
+  	Atraso_ms(500);
     }
 }
 
