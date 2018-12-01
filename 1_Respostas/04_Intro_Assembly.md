@@ -9,7 +9,7 @@
 
 Utilize os registradores R11, R12, R13, R14 e R15 para armazenar valores temporários.
 
-## * 1. Traduza as seguintes linhas em C para a linguagem assembly do MSP430. Utilize somente as seguintes instruções: mov.w, add.w e sub.w.*
+## *1. Traduza as seguintes linhas em C para a linguagem assembly do MSP430. Utilize somente as seguintes instruções: mov.w, add.w e sub.w.*
 
 (a) `f = 0;`
 ```Assembly
