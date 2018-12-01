@@ -203,20 +203,6 @@ int main(void)
 
 }
 
-```C
-int main(void)
-{
-	WDTCTL = WDTPW | WDTHOLD;
-	P1DIR |= LEDS;
-	P1DIR &= ~BTN;
-	P1REN |= BTN;
-	P1OUT |= BTN;
-	P1IES |= BTN;
-	P1IE |= BTN;
-	_BIS_SR(GIE + LPM4_bits);
-	return 0;
-}
-
 interrupt(PORT1_VECTOR) Interrupcao_P1(void)
 {
 	P1OUT |= LEDS;
