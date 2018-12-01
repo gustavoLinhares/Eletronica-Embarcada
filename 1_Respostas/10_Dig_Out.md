@@ -1,12 +1,14 @@
-1. Projete o hardware necessário para o MSP430 controlar um motor DC de 12V e 4A. Utilize transistores bipolares de junção (TBJ) com Vbe = 0,7 V, beta = 100 e Vce(saturação) = 0,2 V. Além disso, considere que Vcc = 3 V para o MSP430, e que este não pode fornecer mais do que 10 mA por porta digital.
+## *1. Projete o hardware necessário para o MSP430 controlar um motor DC de 12V e 4A. Utilize transistores bipolares de junção (TBJ) com Vbe = 0,7 V, beta = 100 e Vce(saturação) = 0,2 V. Além disso, considere que Vcc = 3 V para o MSP430, e que este não pode fornecer mais do que 10 mA por porta digital.*
 
-> Avaliamos se devemos usar Transistor Bipolar ou Par Darlington fazendo os cálculos da corrente de base (Ib deve ser menor de 10 mA).
+Primeiramente Transistor Bipolar ou Par Darlington 
 
-`Ic = B*Ib`
-`4 = 100*Ib`
-`Ib = 40 mA`
+```C
+Ic = B*Ib
+4 = 100*Ib
+Ib = 40 mA
+```
 
-> Devemos usar par Darlington. Calculemos a corrente de base e o resistor necessário.
+Transistor Darlington devido Ib
 
 `Ic = Ib*B**2`
 `4 = Ib*100**2`
@@ -16,7 +18,7 @@
 `Rb = (3 -2*0.7)/0.4*10**-3`
 `Rb = 4 kOhm`
 
-2. Projete o hardware necessário para o MSP430 controlar um motor DC de 10V e 1A. Utilize transistores bipolares de junção (TBJ) com Vbe = 0,7 V e beta = 120. Além disso, considere que Vcc = 3,5 V para o MSP430, e que este não pode fornecer mais do que 10 mA por porta digital.
+## *2. Projete o hardware necessário para o MSP430 controlar um motor DC de 10V e 1A. Utilize transistores bipolares de junção (TBJ) com Vbe = 0,7 V e beta = 120. Além disso, considere que Vcc = 3,5 V para o MSP430, e que este não pode fornecer mais do que 10 mA por porta digital.*
 
 > Avaliamos se devemos usar Transistor Bipolar ou Par Darlington fazendo os cálculos da corrente de base (Ib deve ser menor de 10 mA).
 
@@ -30,10 +32,7 @@
 `Rb = (3.5 -0.7)/8.33*10**-3`
 `Rb = 336 Ohm`
 
-3. Projete o hardware utilizado para controlar 6 LEDs utilizando charlieplexing. Apresente os pinos utilizados no MSP430 e os LEDs, nomeados L1-L6.
-
-
-![](C:\Users\Davi Mendes\Pictures\Capturar.PNG)
+*3. Projete o hardware utilizado para controlar 6 LEDs utilizando charlieplexing. Apresente os pinos utilizados no MSP430 e os LEDs, nomeados L1-L6.*
 
 
 4. Defina a função `void main(void){}` para controlar 6 LEDs de uma árvore de natal usando o hardware da questão anterior. Acenda os LEDs de forma que um ser humano veja todos acesos ao mesmo tempo.
@@ -233,9 +232,3 @@ void Atraso_ms(volatile unsigned int ms)
 	TACTL = MC_0;
 }
 ```
-
-
-
-
-
-
