@@ -9,11 +9,10 @@
 	Utilize os registradores R11, R12, R13, R14 e R15
 	para armazenar valores temporários.
 
-## 1. Escreva os trechos de código assembly do MSP430 para:
+## *1. Escreva os trechos de código assembly do MSP430 para:*
 
 (a) Somente setar o bit menos significativo de R5.
 ```Assembly
-//bis realiza a operação OR bit-a-bit
 bis #BIT0, R5
 ```
 (b) Somente setar dois bits de R6: o menos significativo e o segundo menos significativo.
@@ -23,7 +22,6 @@ bis #BIT1, R6
 ```
 (c) Somente zerar o terceiro bit menos significativo de R7.
 ```Assembly
-// bic.w A, B realiza a operação AND bit-a-bit de B com o inverso de A
 bic.w #BIT0, R7
 ```
  (d) Somente zerar o terceiro e o quarto bits menos significativo de R8.
@@ -48,9 +46,9 @@ else f = g-h-10;
 ```
 
 ```Assembly
-cmp R8, R7			   ;R7 = i, R8 = j
-jl ELSE				  ;if(j<i) jump else
-add.w R6,R5  			;R5 = f, R6 = g
+cmp R8, R7			  
+jl ELSE				  
+add.w R6,R5  			
 add.w #000a,R5
 jmp EXIT
 
@@ -59,7 +57,6 @@ sub.w R6, R4
 sub.w #000a,R5
 
 EXIT:
-...
 ```
 
 ## *3. "Traduza" o seguinte trecho de código em C para o assembly do MSP430:*
@@ -88,8 +85,8 @@ for(i=0; i<100; i++) A[i] = i*2;
 ```
 
 ```Assembly
-.bss i,2 ; 		 		;int i
-mov.w #0,&i ;			   ;i=0
+.bss i,2 ; 		 		
+mov.w #0,&i ;			 
 mov.w i,R11
 for_loop: cmp.w #100,&i	 ;R10 = A, if(i<100)
 jge for_done
@@ -108,14 +105,14 @@ for_done:
 for(i=99; i>=0; i--) A[i] = i*2;
 ```
 
-```Assembly
-.bss i,2 ;
-mov.w #99,&i ;
-fl_loop: call #do_dot ;
-call #delay ;
-call #do_dash ;
-call #delay ;
-dec.w &i ;
-jnz fl_ck ;
-for_done: ;
+```assembly
+mov #99,R7
+mov #0,R11
+FOR:
+rla R7
+mov R7,0(R9)
+inc R7
+add R7,R9
+cmp R11,R7
+jge FOR
 ```
