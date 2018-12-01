@@ -1,4 +1,4 @@
-## 1. Dada uma variável a do tipo char (um byte), escreva os trechos de código em C para:
+## *1. Dada uma variável a do tipo char (um byte), escreva os trechos de código em C para:*
 
 (a) Somente setar o bit menos significativo de a.
 ```C
@@ -37,7 +37,7 @@ A ^= 0xF0;
 A |= 0x0F;
 ```
 
-## 2. Considerando a placa Launchpad do MSP430, escreva o código em C para piscar os dois LEDs ininterruptamente.
+## *2. Considerando a placa Launchpad do MSP430, escreva o código em C para piscar os dois LEDs ininterruptamente.*
 ```C
 #include <msp430g2553.h>
 
@@ -58,7 +58,7 @@ void main (void)
 }
 ```
 
-## 3. Considerando a placa Launchpad do MSP430, escreva o código em C para piscar duas vezes os dois LEDs sempre que o usuário pressionar o botão.
+## *3. Considerando a placa Launchpad do MSP430, escreva o código em C para piscar duas vezes os dois LEDs sempre que o usuário pressionar o botão.*
 ```C
 #include <msp430g2553.h>
 
@@ -85,7 +85,7 @@ void main (void)
 	}
 }
 ```
-## 4. Considerando a placa Launchpad do MSP430, faça uma função em C que pisca os dois LEDs uma vez.
+## * 4. Considerando a placa Launchpad do MSP430, faça uma função em C que pisca os dois LEDs uma vez.*
 ```C
 #include <msp430g2553.h>
 
@@ -101,7 +101,7 @@ int pisca(void)
 }
 ```
 
-## 5. Reescreva o código da questão 2 usando a função da questão 4.
+## *5. Reescreva o código da questão 2 usando a função da questão 4.*
 ```C
 #include <msp430g2553.h>
 
@@ -119,7 +119,7 @@ int main(void)
 }
 ```
 
-## 6. Reescreva o código da questão 3 usando a função da questão 4.
+## *6. Reescreva o código da questão 3 usando a função da questão 4.*
 ```C
 void main (void)
 {
