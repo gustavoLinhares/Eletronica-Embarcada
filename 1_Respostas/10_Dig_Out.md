@@ -2,7 +2,7 @@
 
 Primeiramente Transistor Bipolar ou Par Darlington 
 
-```C
+```
 Ic = B*Ib
 4 = 100*Ib
 Ib = 40 mA
