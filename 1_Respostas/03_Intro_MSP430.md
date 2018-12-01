@@ -2,37 +2,32 @@
 
 (a) Somente setar o bit menos significativo de a.
 ```C
-A |= BIT0;          //Seta o Bit 0 para 1
-ou
+A |= BIT0;  
 A |= 0x01;
 ```
 
 (b) Somente setar dois bits de a: o menos significativo e o segundo menos significativo.
 ```C
-A |= BIT0 + BIT1;          //Seta o Bit 0 e 1 para 1
-ou
+A |= BIT0 + BIT1;
 A |= 0x03;
 ```
 
 
 (c) Somente zerar o terceiro bit menos significativo de a.
 ```C
-A &= ~BIT2;          //Seta o Bit 3 para 0
-ou
+A &= ~BIT2;      
 A &= ~0x04;
 ```
 
 (d) Somente zerar o terceiro e o quarto bits menos significativo de a.
 ```C
-A &= ~(BIT2 + BIT1);          //Seta o Bit 3 e 4 para 0
-ou
+A &= ~(BIT2 + BIT1);
 A &= ~0x0E;
 ```
 
 (e) Somente inverter o bit mais significativo de a.
 ```C
 A ^= ~BIT7;
-ou
 A ^= 0x80;
 ```
 
@@ -107,5 +102,35 @@ int pisca(void)
 ```
 
 ## 5. Reescreva o código da questão 2 usando a função da questão 4.
+```C
+#include <msp430g2553.h>
+
+int pisca(void);
+
+int main(void)
+{
+  volatile int i;
+  WDTCTL = WDTPW | WDTHOLD;
+  P1DIR = BIT0 + BIT6;
+  P1OUT = 0x00;
+  while(1){
+	pisca();  	
+  }
+}
+```
 
 ## 6. Reescreva o código da questão 3 usando a função da questão 4.
+```C
+void main (void)
+{
+	volatile int i;
+	WDTCTL = WDTPW|WDTHOLD;
+	P1DIR  = LED1 + LED2;
+	P1OUT = 0;
+   	while(1){
+		if(BTN & P1OUT == 0){
+			pisca();
+		}
+	}
+}
+```
